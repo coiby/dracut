@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: quay.io/haraldh/dracut-fedora:33
-      options: "-v /dev/kvm:/dev/kvm"
+      options: "-v /dev/kvm:/dev/kvm -v/dev:/dev --privileged -v/lib/modules:/lib/modules:ro"
     timeout-minutes: 45
     strategy:
       matrix:
@@ -37,6 +37,7 @@ jobs:
           "36",
           "40",
           "41",
+          "96",
           "98",
         ]
       fail-fast: false

@@ -14,7 +14,7 @@ NCPU=$(getconf _NPROCESSORS_ONLN)
 if ! [[ $TESTS ]]; then
     make -j$NCPU all syncheck rpm logtee
 else
-    [[ $TESTS == "99" ]] && make_docs=yes || make_docs=no
+    [[ $TESTS == "99" || $TESTS == "96" ]] && make_docs=yes || make_docs=no
     make -j$NCPU enable_documentation=$make_docs all logtee
 
     cd test

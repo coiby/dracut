@@ -23,7 +23,7 @@ if ! [[ $TESTS ]]; then
     [[ -d .git ]] && git fetch --tags && git describe --tags
     make -j "$NCPU" all syncheck rpm logtee
 else
-    if [[ $TESTS == "99" ]]; then
+    if [[ $TESTS == "99" || $TESTS == "96" ]]; then
         [[ -d .git ]] && git fetch --tags && git describe --tags
         make_docs=yes
     else
